@@ -1,0 +1,20 @@
+* {
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  background-color: rgb(252, 252, 252);
+  padding: 100px 130px;
+}
+
+.purchase-box {
+  display: flex;
+  width: 300px;
+
+}
+
+.purchase-box .purchase-info {
+  background-color: #FFFFFF;
+  display: flex;
+}
