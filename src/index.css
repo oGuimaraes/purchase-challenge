@@ -1,0 +1,11 @@
+* {
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #6a6a6a;
+}
+.container {
+  background-color: #eff1fd;
+  padding: 100px 130px;
+}
