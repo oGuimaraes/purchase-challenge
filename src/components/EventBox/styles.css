@@ -3,15 +3,15 @@
 	font-size: 14px;
   border-spacing: 0;
   border-radius: 8px;
-  width: 485px;
-  background-color: #FFFFFF;
+  width: 484px;
+  background-color: #F8F8F8;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.05)
 }
 
 .purchase-table td {
-	min-width: 71px;
+	min-width: 71px; /* */
 	height: 25px;
-	padding: 8px 10px;
+  padding: 8px 10px;
 }
 
 .purchase-info td {
@@ -33,13 +33,27 @@
 }
 
 .purchase-table .titles {
-  background-color: rgba(0, 0, 0, 0.03);
+   background-color: rgba(0, 0, 0, 0.02); 
+}
+
+.purchase-table .titles td {
+  border-bottom: 1px #e2e2e2 solid;
 }
 
 .purchase-table .products {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.02);
   font-size: 12px;
 }
+
+.purchase-table .products td {
+  border-bottom: 1px #e2e2e2 solid;
+}
+
+.purchase-table .products:last-child {
+  border-bottom: none;
+}
+
+
 
 .purchase-table .products:last-child {
 	height: 40px;
