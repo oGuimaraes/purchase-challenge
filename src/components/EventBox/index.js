@@ -5,9 +5,9 @@ import Clock from '../../icons/clock.svg'
 import Place from '../../icons/place.svg'
 import Money from '../../icons/money.svg'
 
-function EventBox() {
+function EventBox(props) {
+    {console.log(props)}
     return (
-        <div className="container">
             <table className="purchase-table">
                 <tbody>
                     <tr className="purchase-info">
@@ -21,12 +21,12 @@ function EventBox() {
                         </td>
                         <td>
                             <img src={Place} className="image-icon"></img>
-                            <span>Pátio Savassi</span>
+                            <span>{props.shopName}</span>
                         </td>
                         <td>
                             <img src={Money} className="image-icon"></img>
                             <span>R$</span>
-                            <span>250,00</span></td>
+                            <span>{props.totalPrice}</span></td>
                     </tr>
                     <tr className="titles">
                         <td className="content-cell"><h6>Produto</h6></td>
@@ -34,22 +34,16 @@ function EventBox() {
                         <td className="content-cell"></td>
                         <td className="content-cell"><h6>Preço</h6></td>
                     </tr>
+                    {props.products.map(product => (
                     <tr className="products">
-                        <td className="content-cell"><span>Camisa Azul</span></td>
+                        <td className="content-cell">{product.name}</td>
                         <td className="content-cell"></td>
                         <td className="content-cell"></td>
-                        <td className="content-cell">R$ 100,00</td>
+                        <td className="content-cell">R$ {product.price}</td>
                     </tr>
-                    <tr className="products">
-                        <td className="content-cell">Calça Rosa</td>
-                        <td className="content-cell"></td>
-                        <td className="content-cell"></td>
-                        <td className="content-cell">R$ 150,00</td>
-                    </tr>
+                    ))}
                 </tbody>
             </table>
-
-        </div>
     );
 }
 

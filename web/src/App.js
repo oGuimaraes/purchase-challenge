@@ -62,8 +62,7 @@ class App extends React.Component {
               totalPrice={purchase.total}
               products={purchase.products}
             />
-          )
-          )
+          ))
         ))}
       </div>
     )
