@@ -38,7 +38,7 @@ function EventBox(props) {
                         <td className="content-cell">{product.name}</td>
                         <td className="content-cell"></td>
                         <td className="content-cell"></td>
-                        <td className="content-cell">R$ {product.price}</td>
+                        <td className="content-cell">R$ {product.value}</td>
                     </tr>
                     ))}
                 </tbody>
