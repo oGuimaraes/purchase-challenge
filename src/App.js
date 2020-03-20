@@ -52,7 +52,6 @@ class App extends React.Component {
 
   render() {
     const { purchases } = this.state;
-    console.log(purchases);
     return (
       <div className="container">
         {purchases.map(purchase => (

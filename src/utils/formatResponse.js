@@ -1,40 +1,45 @@
 module.exports = function formatResponse(response) {
-    console.log(response);
     const purchases = response.events;
-    const formattedData = [];
-    let day, mouth, year;
-    let dateArray = [];
+    var responseFormated = [];
+    var products = {}; 
 
     purchases.map(purchase => {
-        getDateTime(purchase);
+        fillPurchaseObject(purchase);
+        //console.log(responseFormated);
     });
 
-    function getDateTime(purchase) {
+    function fillPurchaseObject(purchase) {
+        let purchaseObject = new Object();
+        //console.log(purchase)
+        //console.log(purchases)
         const event = purchase.event;
 
         if (event === 'comprou') {
-            const date = new Date(purchase.timestamp);
+            console.log(purchase)
+            purchaseObject.timestamp = purchase.timestamp;
 
-            /* Manipulação das data das compras */
-            let day = date.getDate();
-            day = (day < 10 ? "0" : "") + day;
+            /* Add shop name to purchaseObject */
+            purchase.custom_data.map(shop =>{
+                if (shop.key === 'store_name') {
+                    purchaseObject.shop_name = shop.value;
+                } else {
+                    purchaseObject.transaction_id = shop.value;
+                }
+            })
+            purchaseObject.total = purchase.revenue;
+            responseFormated.push(purchaseObject);
 
-            let month = date.getMonth() + 1;
-            month = (month < 10 ? "0" : "") + month;
+            /* Add comprou_produtos to purchase in purchaseObject */
+        } else if ( event === 'comprou-produto') {
+            //console.log (purchase)
 
-            const PurchaseDate = (day + '/' + month + '/' + date.getFullYear());
-            console.log(PurchaseDate)
 
-            /* Manipulação das horas das compras */
-            let hour = date.getHours();
-            let minutes = date.getMinutes();
-            const PurchaseTime = (hour + ':' + minutes);
-
-            console.log(PurchaseTime)
-            
         }
+
+        return purchaseObject;
+        
     }
 
-
-    return response;
+    console.log(responseFormated)
+    return responseFormated;
 }
