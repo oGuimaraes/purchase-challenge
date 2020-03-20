@@ -7,7 +7,7 @@ module.exports = function formatResponse(response) {
     });
 
     purchases.map(purchase => {
-        fillPurchaseProductObject(purchase)
+        fillPurchaseProductObject(purchase);
     });
 
     function fillPurchaseObject(purchase) {

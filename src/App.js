@@ -24,7 +24,6 @@ class App extends React.Component {
 
   render() {
     const { purchases } = this.state;
-    console.log (purchases)
     return (
       <div className="container">
         {purchases.map(purchase => (
@@ -34,6 +33,7 @@ class App extends React.Component {
               shopName={purchase.shop_name}
               totalPrice={purchase.total}
               products={purchase.products}
+              key={purchase.transaction_id}
             />
           )
         )}
