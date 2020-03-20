@@ -6,18 +6,17 @@ import Place from '../../icons/place.svg'
 import Money from '../../icons/money.svg'
 
 function EventBox(props) {
-    {console.log(props)}
     return (
             <table className="purchase-table">
                 <tbody>
                     <tr className="purchase-info">
                         <td>
                             <img src={Calendar} className="image-icon"></img>
-                            <span>22/09/2016</span>
+                            <span>{props.data}</span>
                         </td>
                         <td>
                             <img src={Clock} className="image-icon"></img>
-                            <span>13:57</span>
+                            <span>{props.time}</span>
                         </td>
                         <td>
                             <img src={Place} className="image-icon"></img>
