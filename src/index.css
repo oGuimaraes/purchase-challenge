@@ -1,10 +1,11 @@
 * {
   margin: 0 auto;
-  font-family: 'Tahoma', sans-serif;
+  font-family: "Tahoma", sans-serif;
   font-weight: 300;
   color: #6a6a6a;
 }
 .container {
   background-color: #eff1fd;
   padding: 100px 130px;
+  height: calc(100vh - 200px);
 }
